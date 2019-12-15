@@ -37,4 +37,8 @@ class TestController extends Controller
         $testOne = new TestOne();
         return $testOne->getPropertiesTypes();
     }
+
+    public function setOne() {
+        return "test";
+    }
 }
