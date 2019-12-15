@@ -54,7 +54,7 @@ class TestBasicService
 
     public function getTestOnePropertiesTypes()
     {
-        return $this->testOne->getPropertiesTypes();
+        return json_encode($this->testOne->getPropertiesTypes());
     }
 
     public function setTestOnePropertiesValues($name, $age, $boolProperty)
@@ -63,6 +63,6 @@ class TestBasicService
         $this->testOne->setAge($age);
         $this->testOne->setBoolProperty($boolProperty);
 
-        return $this->testOne->getPropertiesValues();
+        return json_encode($this->testOne->getPropertiesValues());
     }
 }
