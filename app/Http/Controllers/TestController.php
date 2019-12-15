@@ -18,6 +18,14 @@ class TestOne
         ];
     }
 
+    public function getPropertiesValues() {
+        return [
+            'name' => $this->name,
+            'age' => $this->age,
+            'boolProperty' => $this->boolProperty
+        ];
+    }
+
     public function setName($name) {
         $this->name = $name;
     }
@@ -38,7 +46,11 @@ class TestController extends Controller
         return $testOne->getPropertiesTypes();
     }
 
-    public function setOne() {
-        return "test";
+    public function setOne(Request $request) {
+        $testOne = new TestOne();
+        $testOne->setName($request->name);
+        $testOne->setAge($request->age);
+        $testOne->setBoolProperty($request->boolProperty);
+        return $testOne->getPropertiesValues();
     }
 }
